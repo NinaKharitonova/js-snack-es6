@@ -5,6 +5,30 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore.
  */
 
+//Creazione dell'array di oggetti
+const roadBike = [
+  { nome: "Fulmine", peso: 9 },
+  { nome: "Fiamma", peso: 10 },
+  { nome: "Freccia", peso: 8 },
+  { nome: "Breccia", peso: 13 },
+  { nome: "Sole", peso: 7 },
+  { nome: "Rabbai", peso: 11 },
+];
+
+// Funzione per trovare la bicicletta con peso minore
+let lightBike = roadBike[0];
+
+for (let i = 1; i < roadBike.length; i++) {
+  if (roadBike[i].peso < lightBike.peso) {
+    lightBike = roadBike[i];
+  }
+}
+
+// Stampa la bici con peso minore
+console.log(
+  `La bici più leggera è ${lightBike.nome} con peso di ${lightBike.peso}`
+);
+
 /**
 Snack 2
 Creare un array di oggetti di squadre di calcio.
