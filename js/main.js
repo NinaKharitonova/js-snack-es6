@@ -38,6 +38,35 @@ Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli 
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+//Creazione dell'array di oggetti
+const footballTeam = [
+  { nome: "Italia", puntiFatti: 0, falliSubiti: 0 },
+  { nome: "Ucrina", puntiFatti: 0, falliSubiti: 0 },
+  { nome: "Francia", puntiFatti: 0, falliSubiti: 0 },
+  { nome: "Germania", puntiFatti: 0, falliSubiti: 0 },
+];
+
+// Funzione per creare numeri random al posto degli 0
+function getRandomNamber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Creazione punti fatti e falli subiti per ogni squadra
+
+footballTeam.forEach((team) => {
+  team.puntiFatti = getRandomNamber(30, 100);
+  team.falliSubiti = getRandomNamber(10, 50);
+});
+
+//Nuovo array con nomi e falli subiti
+const teamFouls = footballTeam.map((footballTeam) => {
+  return { nome: footballTeam.nome, falliSubiti: footballTeam.falliSubiti };
+});
+
+// Stampa tutto
+console.log(footballTeam);
+console.log(teamFouls);
+
 /** 
 Snack 3 (Bonus)
 Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
